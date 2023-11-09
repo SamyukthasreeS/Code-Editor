@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Documentation</title>
+    <style>
+        /* Add your CSS here */
+        /* Your CSS styles go here */
+        html,
+        body {
+            min-width: 290px;
+            color: #4d4e53;
+            background-color: #ffffff;
+            font-family: "Open Sans", Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        #sidebar {
+            position: fixed;
+            min-width: 290px;
+            top: 0px;
+            left: 0px;
+            width: 300px;
+            height: 100%;
+            border-right: solid;
+            border-color: rgba(0, 22, 22, 0.4);
+        }
+
+        h2 {
+            color: black;
+            margin: 10px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: thin;
+        }
+
+        #documentation h2 {
+            text-align: left;
+            margin: 0px;
+        }
+
+        #sidebar ul {
+            height: 88%;
+            padding: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        #sidebar li {
+            color: #4d4e53;
+            border-top: 1px solid;
+            list-style: none;
+            position: relative;
+            width: 100%;
+        }
+
+        #sidebar .nav-item {
+            display: block;
+            padding: 10px 30px;
+            color: #4d4e53;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #documentation {
+            position: absolute;
+            margin-left: 310px;
+            padding: 20px;
+            margin-bottom: 110px;
+        }
+
+        section article {
+            color: #4d4e53;
+            margin: 15px;
+            font-size: 0.96em;
+        }
+
+        section li {
+            margin: 15px 0px 0px 20px;
+        }
+
+        pre {
+            display: block;
+            text-align: left;
+            white-space: pre-line;
+            position: relative;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 2;
+            background-color: #f7f7f7;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .hscroll {
+            overflow-x: auto;
+        }
+
+        table {
+            caption-side: bottom;
+            border-collapse: collapse;
+        }
+
+        @media only screen and (max-width: 815px) {
+            /* For mobile phones: */
+            #sidebar ul {
+                border: 1px solid;
+                height: 207px;
+            }
+
+            #sidebar {
+                background-color: white;
+                position: absolute;
+                top: 0;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                max-height: 275px;
+                border: none;
+                z-index: 1;
+                border-bottom: 2px solid;
+            }
+
+            #documentation {
+                position: relative;
+                margin-left: 0px;
+                margin-top: 270px;
+            }
+        }
+        @media only screen and (max-width: 400px) {
+            #documentation {
+                margin-left: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="sidebar">
+        <h2>C Documentation</h2>
+        <ul>
+            <li><a class="nav-item" href="#c-basic">C Basic</a></li>
+            <li><a class="nav-item" href="#c-tutorial">C Tutorial: What is C?</a></li>
+            <li><a class="nav-item" href="#c-syntax">C Basic Syntax</a></li>
+            <li><a class="nav-item" href="#c-comments">C Comments</a></li>
+            <li><a class="nav-item" href="#c-data-types">C Data Types</a></li>
+            <li><a class="nav-item" href="#c-variables">C Variables</a></li>
+            <li><a class="nav-item" href="#c-constants-literals">C Constants/Literals</a></li>
+            <li><a class="nav-item" href="#c-operators">C Operators</a></li>
+            <li><a class="nav-item" href="#c-conditional-statements">C Conditional Statements</a></li>
+            <li><a class="nav-item" href="#c-loops">C Loops</a></li>
+            <li><a class="nav-item" href="#c-functions">C Functions</a></li>
+            <li><a class="nav-item" href="#c-arrays">C Arrays</a></li>
+            <li><a class="nav-item" href="#c-strings">C Strings</a></li>
+            <li><a class="nav-item" href="#c-pointers">C Pointers</a></li>
+            <li><a class="nav-item" href="#c-structures">C Structures</a></li>
+            <li><a class="nav-item" href="#c-file-io">C File I/O</a></li>
+            <li><a class="nav-item" href="#c-dynamic-memory">C Dynamic Memory</a></li>
+        </ul>
+    </nav>
+    <main id="documentation">
+        <section id="c-basic">
+            <h2>C Basic</h2>
+            <article>
+                <p>
+                    C is a general-purpose programming language known for its efficiency and low-level capabilities.
+                </p>
+                <pre>
+// Example C program
+#include <stdio.h>
+
+int main() {
+    printf("Hello, C!\n");
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="c-tutorial">
+            <h2>C Tutorial: What is C?</h2>
+            <article>
+                <p>
+                    C is a procedural programming language developed in the 1970s. It is widely used in system programming and embedded systems.
+                </p>
+            </article>
+        </section>
+        <section id="c-syntax">
+            <h2>C Basic Syntax</h2>
+            <article>
+                <p>
+                    C syntax defines how programs are written in the language, including rules for statements, declarations, and more.
+                </p>
+                <pre>
+// Example C syntax
+int main() {
+    int x = 5; // Variable declaration and initialization
+    printf("The value of x is: %d\n", x);
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="c-comments">
+            <h2>C Comments</h2>
+            <article>
+                <p>
+                    Comments in C are used to provide explanations within the code. They are ignored by the compiler.
+                </p>
+                <pre>
+// Example C comments
+#include <stdio.h>
+
+int main() {
+    // This is a single-line comment
+    printf("Hello, C!\n");
+    
+    /* This is a
+       multi-line comment */
+       
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="c-data-types">
+            <h2>C Data Types</h2>
+            <article>
+                <p>
+                    C supports various data types for storing different kinds of values.
+                </p>
+                <pre>
+// Example C data types
+int integer_variable = 42;
+float float_variable = 3.14;
+char char_variable = 'A';
+                </pre>
+            </article>
+        </section>
+        <section id="c-variables">
+            <h2>C Variables</h2>
+            <article>
+                <p>
+                    In C, you can declare variables of different types, such as integers, floats, characters, and more.
+                </p>
+                <pre>
+// Example C variables
+int age = 25;
+float salary = 45000.50;
+char grade = 'A';
+                </pre>
+            </article>
+        </section>
+        <section id="c-constants-literals">
+            <h2>C Constants/Literals</h2>
+            <article>
+                <p>
+                    C allows you to define constants and use literals in your code.
+                </p>
+                <pre>
+// Example C constants and literals
+const double PI = 3.14159265359; // Constant
+int literalInteger = 42; // Integer literal
+double literalDouble = 3.14; // Double literal
+char literalChar = 'A'; // Character literal
+                </pre>
+            </article>
+        </section>
+        <section id="c-operators">
+            <h2>C Operators</h2>
+            <article>
+                <p>
+                    C provides various operators for performing operations on variables and values.
+                </p>
+                <pre>
+// Example C operators
+int a = 10, b = 5;
+int addition = a + b; // Addition operator
+int subtraction = a - b; // Subtraction operator
+int multiplication = a * b; // Multiplication operator
+int division = a / b; // Division operator
+                </pre>
+            </article>
+        </section>
+        <section id="c-conditional-statements">
+            <h2>C Conditional Statements</h2>
+            <article>
+                <p>
+                    C provides <code>if</code>, <code>else</code>, and <code>switch</code> statements for decision making in your programs.
+                </p>
+                <pre>
+// Example C conditional statements
+int x = 10;
+if (x > 5) {
+    printf("x is greater than 5\n");
+} else {
+    printf("x is not greater than 5\n");
+}
+
+int choice = 2;
+switch (choice) {
+    case 1:
+        printf("Option 1 selected\n");
+        break;
+    case 2:
+        printf("Option 2 selected\n");
+        break;
+    default:
+        printf("Invalid choice\n");
+}
+                </pre>
+            </article>
+        </section>
+        <section id="c-loops">
+            <h2>C Loops</h2>
+            <article>
+                <p>
+                    C supports various types of loops like <code>for</code>, <code>while</code>, and <code>do-while</code> for repetitive tasks.
+                </p>
+                <pre>
+// Example C loops
+for (int i = 0; i < 5; i++) {
+    printf("%d ", i);
+}
+
+int count = 0;
+while (count < 3) {
+    printf("%d ", count);
+    count++;
+}
+
+int num = 0;
+do {
+    printf("%d ", num);
+    num++;
+} while (num < 3);
+                </pre>
+            </article>
+        </section>
+        <section id="c-functions">
+            <h2>C Functions</h2>
+            <article>
+                <p>
+                    Functions are reusable blocks of code in C. You can define and call functions to perform specific tasks.
+                </p>
+                <pre>
+// Example C functions
+#include <stdio.h>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = add(5, 7);
+    printf("Sum: %d\n", result);
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="c-arrays">
+            <h2>C Arrays</h2>
+            <article>
+                <p>
+                    Arrays in C allow you to store multiple values of the same data type in a single variable.
+                </p>
+                <pre>
+// Example C arrays
+int numbers[5] = {1, 2, 3, 4, 5};
+char characters[3] = {'A', 'B', 'C'};
+                </pre>
+            </article>
+        </section>
+        <section id="c-strings">
+            <h2>C Strings</h2>
+            <article>
+                <p>
+                    C provides a way to work with strings as character arrays.
+                </p>
+                <pre>
+// Example C strings
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char greeting[] = "Hello, C!";
+    printf("%s\n", greeting);
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="c-pointers">
+            <h2>C Pointers</h2>
+            <article>
+                <p>
+                    Pointers in C allow you to work with memory addresses and perform advanced memory manipulation.
+                </p>
+                <pre>
+// Example C pointers
+int value = 42;
+int *pointer = &value; // Pointer to int
+
+printf("Value: %d\n", value);
+printf("Value via pointer: %d\n", *pointer);
+                </pre>
+            </article>
+        </section>
+        <section id="c-structures">
+            <h2>C Structures</h2>
+            <article>
+                <p>
+                    C structures allow you to group different data types into a single variable.
+                </p>
+                <pre>
+// Example C structures
+struct Student {
+    char name[50];
+    int age;
+    float GPA;
+};
+
+int main() {
+    struct Student student1;
+    strcpy(student1.name, "John");
+    student1.age = 20;
+    student1.GPA = 3.8;
+    
+    printf("Student Name: %s\n", student1.name);
+    printf("Student Age: %d\n", student1.age);
+    printf("Student GPA: %.2f\n", student1.GPA);
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="c-file-io">
+            <h2>C File I/O</h2>
+            <article>
+                <p>
+                    C provides functions for reading from and writing to files.
+                </p>
+                <pre>
+// Example C file I/O
+#include <stdio.h>
+int main() {
+    FILE *file;
+    file = fopen("example.txt", "w");
+    fprintf(file, "This is a file created using C.");
+    fclose(file);
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="c-dynamic-memory">
+            <h2>C Dynamic Memory</h2>
+            <article>
+                <p>
+                    C allows you to allocate and deallocate memory dynamically using functions like <code>malloc()</code> and <code>free()</code>.
+                </p>
+                <pre>
+// Example C dynamic memory allocation
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *arr = (int *)malloc(5 * sizeof(int));
+    if (arr == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+    for (int i = 0; i < 5; i++) {
+        arr[i] = i * 2;
+    }
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    free(arr);
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <!-- Add more sections as needed -->
+    </main>
+</body>
+</html>

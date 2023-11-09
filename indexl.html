@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adepts IDE</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="codemirror-5.65.9/lib/codemirror.css">
+    <script src="codemirror-5.65.9/mode/python/python.js"></script>
+    <script src="codemirror-5.65.9/lib/codemirror.js"></script>
+    <script src="codemirror-5.65.9/mode/clike/clike.js"></script>
+    <link rel="stylesheet" href="codemirror-5.65.9/theme/dracula.css">
+    <script src="codemirror-5.65.9/addon/edit/closebrackets.js"></script>
+    <link rel="stylesheet" href="codemirror-5.65.9/theme/material.css">
+    <link rel="stylesheet" href="codemirror-5.65.9/theme/ambiance.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/64f2c381b2d3e13950ed77ad/1h9a4ndqs';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+    <div class="headcontainer">
+        <img src="logo_a2.png" alt="Logo" class="logo">
+        
+        <div class="user-info" style="float: right;">
+            <div style="display: flex;">
+                <p id="userEmail" style="margin-top: 8px;"></p>
+                <div id="user-profile" class="user-profile"><img src="logo.png"></div>
+            </div>
+        </div>
+        <button id="webbutton" class="btn btn-primary" style="float: right;">
+            <a href="web/index.html" style="color: black;text-decoration: none;">web</a>
+        </button>
+    </div>
+    <div class="side1">
+        <div class="side">
+            <div class="flex1">
+                <div class="button-container">
+                    
+                    <button id="run" class="btn btn-success" onclick="compileP()">Run</button>
+                    <button id="downloadBtn" class="btn btn-primary">Download</button>
+                    <button id="uploadBtn" class="btn btn-primary">Upload</button>
+                    <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                    <button id="saveBtn" class="btn btn-secondary">Save</button>
+                    <button id="viewSavedFilesBtn" class="btn btn-primary" onclick="redirectToSavedFiles()"Saved Files</button>
+                    <select class="form-select">
+                        <option selected>Learn</option>
+                        <option>C</option>
+                        <option>C#</option>
+                        <option>Cpp</option>
+                        <option>Java</option>
+                        <option>Python</option>
+                        <option>Ruby</option>
+                        <option>HTML</option>
+                    </select>
+                    <button id="dashboardBtn" class="btn btn-secondary">Dashboard</button>
+                    <label for="inlineFormSelectPref"></label>
+                    <select class="form-select" id="lang" onchange="template()">
+                        <option selected>Language</option>
+                        <option value="C">C</option>
+                        <option value="CSharp">C#</option>
+                        <option value="Cpp">Cpp</option>
+                        <option value="Java">Java</option>
+                        <option value="Python">Python</option>
+                        <option value="Ruby">Ruby</option>
+                    </select>
+                    <div id="themeMenu" style="margin-right: 10px;">
+                        <label for="themeSelect"></label>
+                        <select class="theme" id="themeSelect">
+                            <option value="default">Theme</option>
+                            <option value="dracula">Dracula</option>
+                            <option value="material">Material</option>
+                            <option value="ambiance">Ambiance</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="flex">
+                    <div>
+                        <textarea type="text" id="editor"></textarea>
+                    </div>
+                    <div class="testc">
+                        <h2 style="color: rgb(0, 0, 0);margin-left: 10px;margin-top:0px">Input:</h2>
+                        <textarea type="text" id="input" class="" aria-label="Last name" rows="19" cols="40" style="resize: none;"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="output-container">
+                <div class="output-textarea">
+                    <label for="Output">Output</label>
+                    <textarea id="output" rows="13" cols="121"readonly></textarea>
+                </div>
+                <div class="expected-output-textarea">
+                    <label>Expected output:</label>
+                    <textarea id="testCase1" rows="12" cols="38" readonly></textarea>
+                    <label>
+                        <input type="checkbox" id="enableTestCase" style="margin-left: 21px;">Enable Test Case
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            const enableTestCaseCheckbox = document.getElementById('enableTestCase');
+            const testCase1Textarea = document.getElementById('testCase1');
+
+            enableTestCaseCheckbox.addEventListener('change', function () {
+                testCase1Textarea.readOnly = !enableTestCaseCheckbox.checked;
+            });
+
+            $("#run").click(function() {
+                if (enableTestCaseCheckbox.checked) {
+                    setTimeout(function() {
+                        var outputValue = $("#output").val().trim();
+                        var testCaseValue1 = $("#testCase1").val().trim();
+
+                        if (outputValue === testCaseValue1) {
+                            $("#testCase1").css("background-color", "lightgreen");
+                        } else {
+                            $("#testCase1").css("background-color", "lightcoral");
+                        }
+                    }, 7000);
+                }
+            });
+        });
+    </script>
+    
+    <!-- <script>document.addEventListener("DOMContentLoaded", function() {
+    });</script> -->
+    <script src="index.js"></script>
+    <script src="save.js"></script>
+    <script src="Api.js"></script>
+    <script>
+        // Get the email parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email');
+        // Display the email on the page
+        if (email) {
+            document.getElementById('userEmail').textContent =decodeURIComponent(email);
+        } else {
+            document.getElementById('userEmail').textContent = "User email not found.";
+        }
+    </script>
+        <script>
+    function redirectToSavedFiles() {
+        const userEmail = document.getElementById('userEmail').textContent;
+        const url = `saved_files_pagel.php?email=${encodeURIComponent(userEmail)}`;
+        window.location.href = url;
+    }
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const dashboardButton = document.getElementById('dashboardBtn');
+        dashboardButton.addEventListener('click', function() {
+            // Redirect to the dashboardl.html page
+            window.location.href = 'dashboardl.html?email=' + encodeURIComponent(email);
+        });
+    });
+</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const selectBox = document.querySelector('.form-select');
+
+    selectBox.addEventListener('change', function() {
+        const selectedOption = selectBox.value;
+        // Perform navigation based on the selected option
+        switch (selectedOption) {
+            case 'C':
+                window.location.href = 'documentation/c.html';
+                break;
+            case 'C#':
+                window.location.href = 'documentation/csharp.html';
+                break;
+            case 'Cpp':
+                window.location.href = 'documentation/cpp.html';
+                break;
+            case 'Java':
+                window.location.href = 'documentation/java.html';
+                break;
+            case 'Python':
+                window.location.href = 'documentation/python.html';
+                break;
+            case 'Ruby':
+                window.location.href = 'documentation/ruby.html';
+                break;
+            case 'HTML':
+                window.location.href = 'documentation/html.html';
+                break;
+        }
+    });
+});
+    </script>
+</body>
+</html>

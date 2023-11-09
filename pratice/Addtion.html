@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition Problem</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="codemirror-5.65.9/lib/codemirror.css">
+    <script src="codemirror-5.65.9/lib/codemirror.js"></script>
+    <script src="codemirror-5.65.9/mode/python/python.js"></script>
+    <script src="codemirror-5.65.9/mode/ruby/ruby.js"></script>
+    <script src="codemirror-5.65.9/mode/clike/clike.js"></script>
+    <link rel="stylesheet" href="codemirror-5.65.9/theme/dracula.css">
+    <script src="codemirror-5.65.9/addon/edit/closebrackets.js"></script>
+    <link rel="stylesheet" href="codemirror-5.65.9/theme/material.css">
+    <link rel="stylesheet" href="codemirror-5.65.9/theme/ambiance.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="container">
+            <!-- <a href="../admin.html" style="text-decoration: none; margin-left: 5px;top: 5px;color: rgb(62, 89, 208);"><bold>Back</bold></a> -->
+            <h2 id="problem-title">1. ADDITION OF TWO NUMBERS</h2>
+            <div class="test-case">
+                <label class="input-label">Description:</label><br>
+                <textarea id="description" placeholder=" Your task is very simple: given two integers A and B, write a program to add these two numbers and output the sum.
+
+Input Format:
+
+    Then follow line contains two integers, A and B.
+    
+Output Format:
+
+    For each test case, add A and B and display the sum in a new line." style="height:200px;" readonly></textarea>
+            </div>
+            <div class="test-case-container">
+                <div>
+                    <h3>Test Case 1</h3>
+                    <div class="test-case">
+                        <label class="input-label">Input:</label><br>
+                        <textarea id="input1" readonly>1 2</textarea>
+                        <br>
+                        <label class="input-label">Excepted Output:</label><br>
+                        <textarea id="output1" readonly>3</textarea>
+                    </div>
+                </div>
+                <div>
+                    <h3>Test Case 2</h3>
+                    <div class="test-case">
+                        <label class="input-label">Input:</label><br>
+                        <textarea id="input2" readonly>-5 10</textarea>
+                        <br>
+                        <label class="input-label">Expected Output:</label><br>
+                        <textarea id="output2" readonly>5</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- New Container on the Right Side -->
+        <div class="container-right">
+                <label for="lang" style="margin-right: 10px;">Language:</label>
+                <select class="form-select" id="lang" onchange="template()">
+                    <option selected>Language</option>
+                    <option value="C">C</option>
+                    <option value="CSharp">C#</option>
+                    <option value="Cpp">Cpp</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                    <option value="Ruby">Ruby</option>
+                </select>
+                <label for="themeSelect" style="margin-left: 10px;">Theme:</label>
+                <select class="theme" id="themeSelect">
+                    <option value="default">Theme</option>
+                    <option value="dracula">Dracula</option>
+                    <option value="material">Material</option>
+                    <option value="ambiance">Ambiance</option>
+                </select>
+                <button id="run-all-code" class="btn btn-success" style="float: right; margin-right: 30px;" onclick="compileAndRunAll()">Run Code</button>
+                <div style="margin-top: 20px;">
+                <textarea id="editor"></textarea>
+                </div>
+                <br>
+            <label for="customTestCase">Custom Test Case:</label>
+            <input type="checkbox" id="customTestCase">
+            <div class="test-case-container">
+                <div>
+                    <h3>RESULT 1:</h3>
+                    <textarea id="testcase1" style="width: 95%; height: 80px;" readonly></textarea>
+                </div>
+                <div>
+                    <h3>RESULT 2:</h3>
+                    <textarea id="testcase2" style="width: 95%; height: 80px; margin-left: 20px;" readonly></textarea>
+                </div>
+            </div>
+    </div>
+</body>
+<script src="Api.js"></script>
+<script src="index.js"></script>
+
+</html>

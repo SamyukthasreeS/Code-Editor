@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Documentation</title>
+    <style>
+        /* Add your CSS here */
+        html,
+        body {
+            min-width: 290px;
+            color: #4d4e53;
+            background-color: #ffffff;
+            font-family: "Open Sans", Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        #sidebar {
+            position: fixed;
+            min-width: 290px;
+            top: 0px;
+            left: 0px;
+            width: 300px;
+            height: 100%;
+            border-right: solid;
+            border-color: rgba(0, 22, 22, 0.4);
+        }
+
+        h2 {
+            color: black;
+            margin: 10px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: thin;
+        }
+
+        #documentation h2 {
+            text-align: left;
+            margin: 0px;
+        }
+
+        #sidebar ul {
+            height: 88%;
+            padding: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        #sidebar li {
+            color: #4d4e53;
+            border-top: 1px solid;
+            list-style: none;
+            position: relative;
+            width: 100%;
+        }
+
+        #sidebar .nav-item {
+            display: block;
+            padding: 10px 30px;
+            color: #4d4e53;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #documentation {
+            position: absolute;
+            margin-left: 310px;
+            padding: 20px;
+            margin-bottom: 110px;
+        }
+
+        section article {
+            color: #4d4e53;
+            margin: 15px;
+            font-size: 0.96em;
+        }
+
+        section li {
+            margin: 15px 0px 0px 20px;
+        }
+
+        pre {
+            display: block;
+            text-align: left;
+            white-space: pre-line;
+            position: relative;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 2;
+            background-color: #f7f7f7;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .hscroll {
+            overflow-x: auto;
+        }
+
+        table {
+            caption-side: bottom;
+            border-collapse: collapse;
+        }
+
+        @media only screen and (max-width: 815px) {
+            /* For mobile phones: */
+            #sidebar ul {
+                border: 1px solid;
+                height: 207px;
+            }
+
+            #sidebar {
+                background-color: white;
+                position: absolute;
+                top: 0;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                max-height: 275px;
+                border: none;
+                z-index: 1;
+                border-bottom: 2px solid;
+            }
+
+            #documentation {
+                position: relative;
+                margin-left: 0px;
+                margin-top: 270px;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            #documentation {
+                margin-left: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="sidebar">
+        <h2>Python Documentation</h2>
+        <ul>
+            <li><a class="nav-item" href="#python-introduction">Python Introduction</a></li>
+            <li><a class="nav-item" href="#python-keywords">Python Keywords & Identifiers</a></li>
+            <li><a class="nav-item" href="#python-comments">Python Comments, Statements, Indentation & Docstring</a></li>
+            <li><a class="nav-item" href="#python-variables">Python Variables, Constants, and Literals</a></li>
+            <li><a class="nav-item" href="#python-data-types">Python Data Types</a></li>
+            <li><a class="nav-item" href="#python-operators">Python Operators: Arithmetic, Comparison, Logical and more.</a></li>
+            <li><a class="nav-item" href="#python-variables-scope">Python Name, Namespace, & Scope</a></li>
+            <li><a class="nav-item" href="#python-flow-control">Python Flow of Control</a></li>
+            <li><a class="nav-item" href="#python-functions">Python Functions</a></li>
+            <li><a class="nav-item" href="#python-data-types">Python Data Types</a></li>
+        </ul>
+    </nav>
+    <main id="documentation">
+        <section id="python-introduction">
+            <h2>Python Introduction</h2>
+            <article>
+                <p>
+                    Python is a high-level programming language known for its simplicity and readability.
+                </p>
+                <pre>
+# Example Python code
+print("Hello, Python!")
+                </pre>
+            </article>
+        </section>
+        <section id="python-keywords">
+            <h2>Python Keywords & Identifiers</h2>
+            <article>
+                <p>
+                    Python keywords are reserved words used to define the language's syntax and structure.
+                </p>
+                <pre>
+# Example Python keywords
+if True:
+    print("This code is executed.")
+                </pre>
+            </article>
+        </section>
+        <section id="python-comments">
+            <h2>Python Comments, Statements, Indentation & Docstring</h2>
+            <article>
+                <p>
+                    Comments in Python start with a hash (#) symbol.
+                </p>
+                <pre>
+# Example Python comment
+# This is a comment
+                </pre>
+            </article>
+        </section>
+        <section id="python-variables">
+            <h2>Python Variables, Constants, and Literals</h2>
+            <article>
+                <p>
+                    In Python, you can declare variables, constants, and use literals.
+                </p>
+                <pre>
+# Example Python variables
+x = 10
+name = "John"
+
+# Example Python constants
+PI = 3.14159
+
+# Example Python literals
+num_literal = 42
+string_literal = "Hello, World!"
+                </pre>
+            </article>
+        </section>
+        <section id="python-data-types">
+            <h2>Python Data Types</h2>
+            <article>
+                <p>
+                    Python supports various data types, including integers, floats, strings, and more.
+                </p>
+                <pre>
+# Example Python data types
+integer_variable = 42
+float_variable = 3.14
+string_variable = "Python"
+                </pre>
+            </article>
+        </section>
+        <section id="python-operators">
+            <h2>Python Operators</h2>
+            <article>
+                <p>
+                    Python supports various types of operators for different operations.
+                </p>
+                <pre>
+# Example Python arithmetic operators
+x = 10
+y = 5
+addition = x + y
+subtraction = x - y
+multiplication = x * y
+division = x / y
+
+# Example Python comparison operators
+a = 10
+b = 20
+is_equal = a == b
+is_not_equal = a != b
+greater_than = a > b
+less_than = a < b
+
+# Example Python logical operators
+is_true = True
+is_false = False
+logical_and = is_true and is_false
+logical_or = is_true or is_false
+logical_not = not is_true
+                </pre>
+            </article>
+        </section>
+        <section id="python-variables-scope">
+            <h2>Python Name, Namespace, & Scope</h2>
+            <article>
+                <p>
+                    In Python, variables have different scopes: local, enclosing, and global.
+                </p>
+                <pre>
+# Example Python variable scope
+global_variable = 10
+
+def my_function():
+    local_variable = 20
+    print(global_variable)  # Access global variable
+
+# Access global_variable
+my_function()
+                </pre>
+            </article>
+        </section>
+        <section id="python-flow-control">
+            <h2>Python Flow of Control</h2>
+            <article>
+                <p>
+                    Python provides if, for, while, and other statements for flow control.
+                </p>
+                <pre>
+# Example Python if statement
+x = 10
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is not greater than 5")
+
+# Example Python for loop
+for i in range(5):
+    print(i)
+
+# Example Python while loop
+count = 0
+while count < 3:
+    print(count)
+    count += 1
+                </pre>
+            </article>
+        </section>
+        <section id="python-functions">
+            <h2>Python Functions</h2>
+            <article>
+                <p>
+                    Functions are reusable blocks of code in Python.
+                </p>
+                <pre>
+# Example Python function
+def greet(name):
+    print("Hello, " + name + "!")
+
+# Call the function
+greet("Alice")
+                </pre>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

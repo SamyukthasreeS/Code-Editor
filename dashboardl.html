@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Welcome to the Dashboard</h1>
+        <div id="user-info">
+            <p id="user-email"></p>
+            <div id="user-profile">
+                <img id="profile-image" alt="Profile Picture" src="google.png">
+            </div>
+        </div>
+        <div id="file-count-container">
+            <p id="file-count"></p>
+        </div>
+    </div>
+    <canvas id="pieChart" width="300" height="200"></canvas>
+    <script>
+        // Get the email parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email');
+
+        // Display the email on the page
+        if (email) {
+            document.getElementById('user-email').textContent = `User Email: ${decodeURIComponent(email)}`;
+        } else {
+            document.getElementById('user-email').textContent = "User email not found.";
+        }
+
+        // Fetch user-specific language data
+        if (email) {
+            fetch(`fetch_language_data.php?user_email=${email}`)
+                .then(response => response.json())
+                .then(data => {
+                    const languageCounts = countLanguages(data); // Count the occurrences of each language
+                    createPieChart(languageCounts); // Create the pie chart
+                })
+                .catch(error => {
+                    console.error("Error fetching language data:", error);
+                });
+        } else {
+            console.error("User email not found in URL parameters.");
+        }
+
+        // Count the occurrences of each language
+        function countLanguages(data) {
+            const counts = {};
+            data.forEach(language => {
+                if (counts[language]) {
+                    counts[language]++;
+                } else {
+                    counts[language] = 1;
+                }
+            });
+            return counts;
+        }
+
+        // Create a simple pie chart using Chart.js
+        function createPieChart(languageCounts) {
+            const ctx = document.getElementById('pieChart').getContext('2d');
+            const data = Object.values(languageCounts);
+            const backgroundColors = [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+            ];
+
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: Object.keys(languageCounts),
+                    datasets: [{
+                        data: data,
+                        backgroundColor: backgroundColors,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                }
+            });
+        }
+    </script>
+    <style>
+        /* Reset some default styles */
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .dashboard-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #user-info {
+            text-align: center;
+        }
+
+        #user-profile {
+            margin-top: 10px;
+        }
+
+        #profile-image {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+
+        #file-count-container {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Pie chart styles */
+        #pieChart {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</body>
+</html>

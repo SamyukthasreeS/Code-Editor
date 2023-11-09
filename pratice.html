@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body {
+            background-color:rgb(255, 255, 255);
+        }
+        .practice-box {
+            margin-left: 10%;
+            border: 1px solid #ddd;
+            border-radius: 5%;color: rgb(0, 0, 0);
+            padding: 10px;
+            margin-top: 10px;
+            width: 70%;
+            background-color: #ffffff;
+        }
+        .practice-box h4 {
+            margin: 0;
+        }
+        .easy {
+            color: green;
+        }
+        .medium {
+            color: orange;
+        }
+        .high {
+            color: red;
+        }
+        .solve-button {
+            background-color: rgb(41, 77, 255);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        button {
+            float: right;
+        }
+        select {
+            margin-bottom: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <center><h3>SOLVE PROBLEMS</h3></center>
+    <select id="levelFilter" style="margin-left: 72%;">
+        <option value="all">All Levels</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+    </select>
+    <div id="practice-container" style="margin-left: 30px;">
+        <div class="practice-box">
+            <h4>1. ADDITION OF TWO NUMBERS</h4>
+            <button class="solve-button"><a href="pratice/Addtion.html" style="text-decoration: none; color: white;">Solve</a></button>
+            <p>Level: <span class="easy">Easy</span></p>
+            <span class="star"></span>
+        </div>
+
+        <div class="practice-box">
+            <h4>2. GCD OF TWO NUMBERS</h4>
+            <button class="solve-button"><a href="pratice/gcd.html" style="text-decoration: none; color: white;">Solve</a></button>
+            <p>Level: <span class="medium">Medium</span></p>
+            <span class="star"></span>
+        </div>
+
+        <div class="practice-box">
+            <h4>3. DUPLICATE ELEMENTS IN ARRAY</h4>
+            <button class="solve-button"><a href="pratice/duplicate_value.html" style="text-decoration: none; color: white;">Solve</a></button>
+            <p>Level: <span class="high">High</span></p>
+            <span class="star"></span>
+        </div>
+
+        <div class="practice-box">
+            <h4>4. SORT AN ARRAY</h4>
+            <button class="solve-button"><a href="pratice/sort_array.html" style="text-decoration: none; color: white;">Solve</a></button>
+            <p>Level: <span class="high">High</span></p>
+            <span class="star"></span>
+        </div>
+
+        <div class="practice-box">
+            <h4>5. PRINT GIVEN STRING</h4>
+            <button class="solve-button"><a href="pratice/print.html" style="text-decoration: none; color: white;">Solve</a></button>
+            <p>Level: <span class="easy">Easy</span></p>
+            <span class="star"></span>
+        </div>
+
+        <div class="practice-box">
+            <h4>6. PRINT PATTERN</h4>
+            <button class="solve-button"><a href="pratice/pattern.html" style="text-decoration: none; color: white;">Solve</a></button>
+            <p>Level: <span class="medium">Medium</span></p>
+            <span class="star"></span>
+        </div>
+    </div>
+
+    <script>
+        const levelFilter = document.getElementById('levelFilter');
+        const practiceContainer = document.getElementById('practice-container');
+        
+
+        levelFilter.addEventListener('change', filterPracticeBoxes);
+
+        
+        function filterPracticeBoxes() {
+            const selectedLevel = levelFilter.value;
+
+            const practiceBoxes = document.querySelectorAll('.practice-box');
+
+            practiceBoxes.forEach(box => {
+                const levelSpan = box.querySelector('span');
+                if (selectedLevel === 'all' || levelSpan.classList.contains(selectedLevel)) {
+                    box.style.display = 'block';
+                } else {
+                    box.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <script>
+        const solveButtons = document.querySelectorAll('.solve-button');
+// Function to get user email from get_user_data.php
+function getUserEmail(callback) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'get_user_data.php', true);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+            const userEmail = response.email;
+            callback(userEmail);
+        }
+    };
+    xhr.send();
+}
+
+solveButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Get user email using the getUserEmail function
+        getUserEmail(userEmail => {
+            if (userEmail) {
+                const problemName = button.parentNode.querySelector('h4').textContent;
+
+                // Send a POST request to the solve_problem.php script
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'solve_problem.php', true);
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        // Handle the response from the server (if needed)
+                    }
+                };
+                xhr.send(`user_email=${userEmail}&problem_name=${problemName}`);
+            }
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Documentation</title>
+    <style>
+        /* Add your CSS here */
+        /* Your CSS styles go here */
+        html,
+        body {
+            min-width: 290px;
+            color: #4d4e53;
+            background-color: #ffffff;
+            font-family: "Open Sans", Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        #sidebar {
+            position: fixed;
+            min-width: 290px;
+            top: 0px;
+            left: 0px;
+            width: 300px;
+            height: 100%;
+            border-right: solid;
+            border-color: rgba(0, 22, 22, 0.4);
+        }
+
+        h2 {
+            color: black;
+            margin: 10px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: thin;
+        }
+
+        #documentation h2 {
+            text-align: left;
+            margin: 0px;
+        }
+
+        #sidebar ul {
+            height: 88%;
+            padding: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        #sidebar li {
+            color: #4d4e53;
+            border-top: 1px solid;
+            list-style: none;
+            position: relative;
+            width: 100%;
+        }
+
+        #sidebar .nav-item {
+            display: block;
+            padding: 10px 30px;
+            color: #4d4e53;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #documentation {
+            position: absolute;
+            margin-left: 310px;
+            padding: 20px;
+            margin-bottom: 110px;
+        }
+
+        section article {
+            color: #4d4e53;
+            margin: 15px;
+            font-size: 0.96em;
+        }
+
+        section li {
+            margin: 15px 0px 0px 20px;
+        }
+
+        pre {
+            display: block;
+            text-align: left;
+            white-space: pre-line;
+            position: relative;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 2;
+            background-color: #f7f7f7;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .hscroll {
+            overflow-x: auto;
+        }
+
+        table {
+            caption-side: bottom;
+            border-collapse: collapse;
+        }
+
+        @media only screen and (max-width: 815px) {
+            /* For mobile phones: */
+            #sidebar ul {
+                border: 1px solid;
+                height: 207px;
+            }
+
+            #sidebar {
+                background-color: white;
+                position: absolute;
+                top: 0;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                max-height: 275px;
+                border: none;
+                z-index: 1;
+                border-bottom: 2px solid;
+            }
+
+            #documentation {
+                position: relative;
+                margin-left: 0px;
+                margin-top: 270px;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            #documentation {
+                margin-left: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="sidebar">
+        <h2>Ruby Documentation</h2>
+        <ul>
+            <li><a class="nav-item" href="#ruby-introduction">Ruby Introduction</a></li>
+            <li><a class="nav-item" href="#ruby-installation">Ruby Installation</a></li>
+            <li><a class="nav-item" href="#ruby-hello-world">Ruby Hello World</a></li>
+            <li><a class="nav-item" href="#ruby-variables">Ruby Variables</a></li>
+            <li><a class="nav-item" href="#ruby-data-types">Ruby Data Types</a></li>
+            <li><a class="nav-item" href="#ruby-operators">Ruby Operators</a></li>
+            <li><a class="nav-item" href="#ruby-conditional-statements">Ruby Conditional Statements</a></li>
+            <li><a class="nav-item" href="#ruby-loops">Ruby Loops</a></li>
+            <li><a class="nav-item" href="#ruby-functions">Ruby Functions</a></li>
+        </ul>
+    </nav>
+    <main id="documentation">
+        <section id="ruby-introduction">
+            <h2>Ruby Introduction</h2>
+            <article>
+                <p>
+                    Ruby is a dynamic, object-oriented programming language known for its simplicity and productivity.
+                </p>
+                <pre>
+# Example Ruby code
+puts "Hello, Ruby!"
+                </pre>
+            </article>
+        </section>
+        <section id="ruby-installation">
+            <h2>Ruby Installation</h2>
+            <article>
+                <p>
+                    Learn how to install Ruby on your computer to start coding in Ruby.
+                </p>
+            </article>
+        </section>
+        <section id="ruby-hello-world">
+            <h2>Ruby Hello World</h2>
+            <article>
+                <p>
+                    Create a simple "Hello, Ruby!" program to get started with Ruby programming.
+                </p>
+                <pre>
+# Example Ruby Hello World program
+puts "Hello, Ruby!"
+                </pre>
+            </article>
+        </section>
+        <section id="ruby-variables">
+            <h2>Ruby Variables</h2>
+            <article>
+                <p>
+                    In Ruby, you can declare variables to store and manipulate data.
+                </p>
+                <pre>
+# Example Ruby variables
+name = "Alice"
+age = 30
+                </pre>
+            </article>
+        </section>
+        <section id="ruby-data-types">
+            <h2>Ruby Data Types</h2>
+            <article>
+                <p>
+                    Ruby supports various data types, including strings, numbers, arrays, and more.
+                </p>
+                <pre>
+# Example Ruby data types
+string_variable = "Ruby"
+integer_variable = 42
+array_variable = [1, 2, 3, 4, 5]
+                </pre>
+            </article>
+        </section>
+        <section id="ruby-operators">
+            <h2>Ruby Operators</h2>
+            <article>
+                <p>
+                    Ruby provides operators for performing operations on variables and values.
+                </p>
+                <pre>
+# Example Ruby operators
+x = 10
+y = 5
+sum = x + y
+difference = x - y
+product = x * y
+                </pre>
+            </article>
+        </section>
+        <section id="ruby-conditional-statements">
+            <h2>Ruby Conditional Statements</h2>
+            <article>
+                <p>
+                    Use conditional statements like if-else in Ruby for decision-making in your programs.
+                </p>
+                <pre>
+# Example Ruby if-else statement
+age = 18
+if age >= 18
+    puts "You are an adult."
+else
+    puts "You are a minor."
+end
+                </pre>
+            </article>
+        </section>
+        <section id="ruby-loops">
+            <h2>Ruby Loops</h2>
+            <article>
+                <p>
+                    Ruby supports various types of loops like for, while, and until for repetitive tasks.
+                </p>
+                <pre>
+# Example Ruby for loop
+for i in 1..5
+    puts "Iteration #{i}"
+end
+                </pre>
+            </article>
+        </section>
+        <section id="ruby-functions">
+            <h2>Ruby Functions</h2>
+            <article>
+                <p>
+                    Functions in Ruby are defined using the `def` keyword and allow you to reuse code.
+                </p>
+                <pre>
+# Example Ruby function
+def greet(name)
+    puts "Hello, #{name}!"
+end
+
+# Call the function
+greet("Bob")
+                </pre>
+            </article>
+        </section>
+        <!-- Add more sections as needed -->
+    </main>
+</body>
+</html>

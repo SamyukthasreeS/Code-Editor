@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Documentation</title>
+    <style>
+        /* Add your CSS here */
+        /* Your CSS styles go here */
+        html,
+        body {
+            min-width: 290px;
+            color: #4d4e53;
+            background-color: #ffffff;
+            font-family: "Open Sans", Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        #sidebar {
+            position: fixed;
+            min-width: 290px;
+            top: 0px;
+            left: 0px;
+            width: 300px;
+            height: 100%;
+            border-right: solid;
+            border-color: rgba(0, 22, 22, 0.4);
+        }
+
+        h2 {
+            color: black;
+            margin: 10px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: thin;
+        }
+
+        #documentation h2 {
+            text-align: left;
+            margin: 0px;
+        }
+
+        #sidebar ul {
+            height: 88%;
+            padding: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        #sidebar li {
+            color: #4d4e53;
+            border-top: 1px solid;
+            list-style: none;
+            position: relative;
+            width: 100%;
+        }
+
+        #sidebar .nav-item {
+            display: block;
+            padding: 10px 30px;
+            color: #4d4e53;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #documentation {
+            position: absolute;
+            margin-left: 310px;
+            padding: 20px;
+            margin-bottom: 110px;
+        }
+
+        section article {
+            color: #4d4e53;
+            margin: 15px;
+            font-size: 0.96em;
+        }
+
+        section li {
+            margin: 15px 0px 0px 20px;
+        }
+
+        pre {
+            display: block;
+            text-align: left;
+            white-space: pre-line;
+            position: relative;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 2;
+            background-color: #f7f7f7;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .hscroll {
+            overflow-x: auto;
+        }
+
+        table {
+            caption-side: bottom;
+            border-collapse: collapse;
+        }
+
+        @media only screen and (max-width: 815px) {
+            /* For mobile phones: */
+            #sidebar ul {
+                border: 1px solid;
+                height: 207px;
+            }
+
+            #sidebar {
+                background-color: white;
+                position: absolute;
+                top: 0;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                max-height: 275px;
+                border: none;
+                z-index: 1;
+                border-bottom: 2px solid;
+            }
+
+            #documentation {
+                position: relative;
+                margin-left: 0px;
+                margin-top: 270px;
+            }
+        }
+        @media only screen and (max-width: 400px) {
+            #documentation {
+                margin-left: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="sidebar">
+        <h2>C++ Documentation</h2>
+        <ul>
+            <li><a class="nav-item" href="#cpp-basic">C++ Basic</a></li>
+            <li><a class="nav-item" href="#cpp-tutorial">C++ Tutorial: What is C++?</a></li>
+            <li><a class="nav-item" href="#cpp-syntax">C++ Basic Syntax</a></li>
+            <li><a class="nav-item" href="#cpp-comments">C++ Comments</a></li>
+            <li><a class="nav-item" href="#cpp-data-types">C++ Data Types</a></li>
+            <li><a class="nav-item" href="#cpp-variable-types">C++ Variable Types</a></li>
+            <li><a class="nav-item" href="#cpp-variable-scope">C++ Variable Scope</a></li>
+            <li><a class="nav-item" href="#cpp-constants-literals">C++ Constants/Literals</a></li>
+            <li><a class="nav-item" href="#cpp-modifier-types">C++ Modifier Types</a></li>
+            <li><a class="nav-item" href="#cpp-storage-classes">C++ Storage Classes</a></li>
+            <li><a class="nav-item" href="#cpp-operators">C++ Operators</a></li>
+            <li><a class="nav-item" href="#cpp-loop-types">C++ Loop Types</a></li>
+            <li><a class="nav-item" href="#cpp-decision-making">C++ Decision Making</a></li>
+            <li><a class="nav-item" href="#cpp-functions">C++ Functions</a></li>
+            <li><a class="nav-item" href="#cpp-numbers">Numbers in C++</a></li>
+            <li><a class="nav-item" href="#cpp-arrays">C++ Arrays</a></li>
+            <li><a class="nav-item" href="#cpp-strings">C++ Strings</a></li>
+            <li><a class="nav-item" href="#cpp-pointers">C++ Pointers</a></li>
+            <li><a class="nav-item" href="#cpp-references">C++ References</a></li>
+            <li><a class="nav-item" href="#cpp-date-time">C++ Date & Time</a></li>
+            <li><a class="nav-item" href="#cpp-basic-io">C++ Basic Input/Output</a></li>
+        </ul>
+    </nav>
+    <main id="documentation">
+        <section id="cpp-basic">
+            <h2>C++ Basic</h2>
+            <article>
+                <p>
+                    C++ is a powerful programming language with a rich set of features. This section covers the basics of C++ programming.
+                </p>
+                <pre>
+// Example C++ program
+#include <iostream>
+
+int main() {
+    std::cout << "Hello, C++!" << std::endl;
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-tutorial">
+            <h2>C++ Tutorial: What is C++?</h2>
+            <article>
+                <p>
+                    C++ is a general-purpose programming language that extends the C programming language with features like classes and objects. It is widely used for system programming, game development, and more.
+                </p>
+            </article>
+        </section>
+        <section id="cpp-syntax">
+            <h2>C++ Basic Syntax</h2>
+            <article>
+                <p>
+                    C++ syntax defines how programs are written in the language. It includes rules for statements, declarations, and more.
+                </p>
+                <pre>
+// Example C++ syntax
+int main() {
+    int x = 5; // Variable declaration and initialization
+    std::cout << "The value of x is: " << x << std::endl;
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-comments">
+            <h2>C++ Comments</h2>
+            <article>
+                <p>
+                    Comments in C++ are used to provide explanations within the code. They are ignored by the compiler.
+                </p>
+                <pre>
+// Example C++ comments
+#include <iostream>
+
+int main() {
+    // This is a single-line comment
+    std::cout << "Hello, C++!" << std::endl;
+    
+    /* This is a
+       multi-line comment */
+       
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-data-types">
+            <h2>C++ Data Types</h2>
+            <article>
+                <p>
+                    C++ supports various data types for storing different kinds of values.
+                </p>
+                <pre>
+// Example C++ data types
+int integer_variable = 42;
+float float_variable = 3.14;
+char char_variable = 'A';
+std::string string_variable = "Hello, World!";
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-variable-types">
+            <h2>C++ Variable Types</h2>
+            <article>
+                <p>
+                    C++ allows you to declare variables of different types, such as integers, floats, characters, and more.
+                </p>
+                <pre>
+// Example C++ variable types
+int age = 25;
+float salary = 45000.50;
+char grade = 'A';
+bool isStudent = true;
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-variable-scope">
+            <h2>C++ Variable Scope</h2>
+            <article>
+                <p>
+                    In C++, variables can have different scopes, such as local and global.
+                </p>
+                <pre>
+// Example C++ variable scope
+#include <iostream>
+
+int globalVariable = 10; // Global variable
+
+int main() {
+    int localVariable = 20; // Local variable
+    std::cout << "Global variable: " << globalVariable << std::endl;
+    std::cout << "Local variable: " << localVariable << std::endl;
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-constants-literals">
+            <h2>C++ Constants/Literals</h2>
+            <article>
+                <p>
+                    C++ allows you to define constants and use literals in your code.
+                </p>
+                <pre>
+// Example C++ constants and literals
+const double PI = 3.14159265359; // Constant
+int literalInteger = 42; // Integer literal
+double literalDouble = 3.14; // Double literal
+char literalChar = 'A'; // Character literal
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-modifier-types">
+            <h2>C++ Modifier Types</h2>
+            <article>
+                <p>
+                    C++ provides modifiers like <code>const</code> and <code>volatile</code> to alter the properties of variables.
+                </p>
+                <pre>
+// Example C++ modifier types
+int const constantValue = 100; // Constant variable
+volatile int volatileValue = 200; // Volatile variable
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-storage-classes">
+            <h2>C++ Storage Classes</h2>
+            <article>
+                <p>
+                    C++ has several storage classes like <code>auto</code>, <code>static</code>, and <code>extern</code> to define variable storage duration and scope.
+                </p>
+                <pre>
+// Example C++ storage classes
+auto int autoVariable = 42; // Auto storage class
+static int staticVariable = 100; // Static storage class
+extern int externVariable; // Extern storage class (defined in another file)
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-operators">
+            <h2>C++ Operators</h2>
+            <article>
+                <p>
+                    C++ provides various operators for performing operations on variables and values.
+                </p>
+                <pre>
+// Example C++ operators
+int a = 10, b = 5;
+int addition = a + b; // Addition operator
+int subtraction = a - b; // Subtraction operator
+int multiplication = a * b; // Multiplication operator
+int division = a / b; // Division operator
+bool isEqual = (a == b); // Equality operator
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-loop-types">
+            <h2>C++ Loop Types</h2>
+            <article>
+                <p>
+                    C++ supports various types of loops like <code>for</code>, <code>while</code>, and <code>do-while</code> for repetitive tasks.
+                </p>
+                <pre>
+// Example C++ loop types
+for (int i = 0; i < 5; i++) {
+    std::cout << i << " ";
+}
+
+int count = 0;
+while (count < 3) {
+    std::cout << count << " ";
+    count++;
+}
+
+int num = 0;
+do {
+    std::cout << num << " ";
+    num++;
+} while (num < 3);
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-decision-making">
+            <h2>C++ Decision Making</h2>
+            <article>
+                <p>
+                    C++ provides <code>if</code>, <code>else</code>, and <code>switch</code> statements for decision making in your programs.
+                </p>
+                <pre>
+// Example C++ decision making
+int x = 10;
+if (x > 5) {
+    std::cout << "x is greater than 5" << std::endl;
+} else {
+    std::cout << "x is not greater than 5" << std::endl;
+}
+
+int choice = 2;
+switch (choice) {
+    case 1:
+        std::cout << "Option 1 selected" << std::endl;
+        break;
+    case 2:
+        std::cout << "Option 2 selected" << std::endl;
+        break;
+    default:
+        std::cout << "Invalid choice" << std::endl;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-functions">
+            <h2>C++ Functions</h2>
+            <article>
+                <p>
+                    Functions are reusable blocks of code in C++. You can define and call functions to perform specific tasks.
+                </p>
+                <pre>
+// Example C++ function
+#include <iostream>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = add(5, 7);
+    std::cout << "Sum: " << result << std::endl;
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-numbers">
+            <h2>Numbers in C++</h2>
+            <article>
+                <p>
+                    C++ provides various numeric data types for working with numbers, including integers and floating-point numbers.
+                </p>
+                <pre>
+// Example C++ numeric data types
+int integerNumber = 42;
+float floatingPointNumber = 3.14;
+double doublePrecisionNumber = 2.71828;
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-arrays">
+            <h2>C++ Arrays</h2>
+            <article>
+                <p>
+                    Arrays in C++ allow you to store multiple values of the same data type in a single variable.
+                </p>
+                <pre>
+// Example C++ arrays
+int numbers[5] = {1, 2, 3, 4, 5};
+char characters[3] = {'A', 'B', 'C'};
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-strings">
+            <h2>C++ Strings</h2>
+            <article>
+                <p>
+                    C++ provides a <code>string</code> data type and a rich set of string manipulation functions for working with text.
+                </p>
+                <pre>
+// Example C++ strings
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string greeting = "Hello, C++!";
+    std::cout << greeting << std::endl;
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-pointers">
+            <h2>C++ Pointers</h2>
+            <article>
+                <p>
+                    Pointers in C++ allow you to work with memory addresses and perform advanced memory manipulation.
+                </p>
+                <pre>
+// Example C++ pointers
+int value = 42;
+int *pointer = &value; // Pointer to int
+
+std::cout << "Value: " << value << std::endl;
+std::cout << "Value via pointer: " << *pointer << std::endl;
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-references">
+            <h2>C++ References</h2>
+            <article>
+                <p>
+                    References in C++ provide an alternative way to access the same memory location as another variable.
+                </p>
+                <pre>
+// Example C++ references
+int number = 10;
+int &ref = number; // Reference to int
+
+std::cout << "Number: " << number << std::endl;
+std::cout << "Reference: " << ref << std::endl;
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-date-time">
+            <h2>C++ Date & Time</h2>
+            <article>
+                <p>
+                    C++ offers libraries like <code>&lt;ctime&gt;</code> for working with dates and times.
+                </p>
+                <pre>
+// Example C++ date & time
+#include <iostream>
+#include <ctime>
+
+int main() {
+    std::time_t now = std::time(0);
+    std::tm *ltm = std::localtime(&now);
+
+    std::cout << "Year: " << 1900 + ltm->tm_year << std::endl;
+    std::cout << "Month: " << 1 + ltm->tm_mon << std::endl;
+    std::cout << "Day: " << ltm->tm_mday << std::endl;
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="cpp-basic-io">
+            <h2>C++ Basic Input/Output</h2>
+            <article>
+                <p>
+                    C++ provides input and output streams for reading from and writing to files, the console, and other devices.
+                </p>
+                <pre>
+// Example C++ basic input/output
+#include <iostream>
+
+int main() {
+    int number;
+    std::cout << "Enter a number: ";
+    std::cin >> number;
+    std::cout << "You entered: " << number << std::endl;
+    return 0;
+}
+                </pre>
+            </article>
+        </section>
+        
+        <!-- Add more sections as needed -->
+    </main>
+</body>
+</html>

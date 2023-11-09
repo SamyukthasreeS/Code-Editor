@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Documentation</title>
+    <style>
+        /* Add your CSS here */
+        /* Your CSS styles go here */
+        html,
+        body {
+            min-width: 290px;
+            color: #4d4e53;
+            background-color: #ffffff;
+            font-family: "Open Sans", Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        #sidebar {
+            position: fixed;
+            min-width: 290px;
+            top: 0px;
+            left: 0px;
+            width: 300px;
+            height: 100%;
+            border-right: solid;
+            border-color: rgba(0, 22, 22, 0.4);
+        }
+
+        h2 {
+            color: black;
+            margin: 10px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: thin;
+        }
+
+        #documentation h2 {
+            text-align: left;
+            margin: 0px;
+        }
+
+        #sidebar ul {
+            height: 88%;
+            padding: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        #sidebar li {
+            color: #4d4e53;
+            border-top: 1px solid;
+            list-style: none;
+            position: relative;
+            width: 100%;
+        }
+
+        #sidebar .nav-item {
+            display: block;
+            padding: 10px 30px;
+            color: #4d4e53;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #documentation {
+            position: absolute;
+            margin-left: 310px;
+            padding: 20px;
+            margin-bottom: 110px;
+        }
+
+        section article {
+            color: #4d4e53;
+            margin: 15px;
+            font-size: 0.96em;
+        }
+
+        section li {
+            margin: 15px 0px 0px 20px;
+        }
+
+        pre {
+            display: block;
+            text-align: left;
+            white-space: pre-line;
+            position: relative;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 2;
+            background-color: #f7f7f7;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .hscroll {
+            overflow-x: auto;
+        }
+
+        table {
+            caption-side: bottom;
+            border-collapse: collapse;
+        }
+
+        @media only screen and (max-width: 815px) {
+            /* For mobile phones: */
+            #sidebar ul {
+                border: 1px solid;
+                height: 207px;
+            }
+
+            #sidebar {
+                background-color: white;
+                position: absolute;
+                top: 0;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                max-height: 275px;
+                border: none;
+                z-index: 1;
+                border-bottom: 2px solid;
+            }
+
+            #documentation {
+                position: relative;
+                margin-left: 0px;
+                margin-top: 270px;
+            }
+        }
+        @media only screen and (max-width: 400px) {
+            #documentation {
+                margin-left: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="sidebar">
+        <h2>Java Documentation</h2>
+        <ul>
+            <li><a class="nav-item" href="#java-introduction">Java Introduction</a></li>
+            <li><a class="nav-item" href="#java-tutorial">Java Tutorial: What is Java?</a></li>
+            <li><a class="nav-item" href="#java-history">History of Java</a></li>
+            <li><a class="nav-item" href="#java-features">Features of Java</a></li>
+            <li><a class="nav-item" href="#java-cpp-vs-java">C++ vs Java</a></li>
+            <li><a class="nav-item" href="#java-hello-program">Hello Java Program</a></li>
+            <li><a class="nav-item" href="#java-internal">Java Program Internal</a></li>
+            <li><a class="nav-item" href="#java-set-path">How to Set Path in Java?</a></li>
+            <li><a class="nav-item" href="#java-jdk-jre-jvm">Java: JDK, JRE and JVM</a></li>
+            <li><a class="nav-item" href="#java-jvm">JVM: Java Virtual Machine</a></li>
+            <li><a class="nav-item" href="#java-variables">Java Variables</a></li>
+            <li><a class="nav-item" href="#java-data-types">Java Data Types</a></li>
+            <li><a class="nav-item" href="#java-operators">Java Operators</a></li>
+            <li><a class="nav-item" href="#java-keywords">Java Keywords</a></li>
+            <li><a class="nav-item" href="#java-flow-control">Java Flow of Control</a></li>
+            <li><a class="nav-item" href="#java-if-else">Java If-else</a></li>
+            <li><a class="nav-item" href="#java-switch">Java Switch</a></li>
+            <li><a class="nav-item" href="#java-for-loop">Java For Loop</a></li>
+            <li><a class="nav-item" href="#java-while-loop">Java While Loop</a></li>
+            <li><a class="nav-item" href="#java-do-while-loop">Java Do While Loop</a></li>
+            <li><a class="nav-item" href="#java-break">Java Break</a></li>
+            <li><a class="nav-item" href="#java-continue">Java Continue</a></li>
+            <li><a class="nav-item" href="#java-comments">Java Comments</a></li>
+        </ul>
+    </nav>
+    <main id="documentation">
+        <section id="java-introduction">
+            <h2>Java Introduction</h2>
+            <article>
+                <p>
+                    Java is a high-level, object-oriented programming language known for its platform independence and versatility.
+                </p>
+                <pre>
+// Example Java code
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}
+                </pre>
+            </article>
+        </section>
+        <section id="java-tutorial">
+            <h2>Java Tutorial: What is Java?</h2>
+            <article>
+                <p>
+                    Java is a popular programming language developed by Sun Microsystems (now owned by Oracle Corporation) in the mid-1990s.
+                </p>
+            </article>
+        </section>
+        <section id="java-history">
+            <h2>History of Java</h2>
+            <article>
+                <p>
+                    Java has a rich history and has evolved over the years with significant contributions to the world of programming.
+                </p>
+            </article>
+        </section>
+        <section id="java-features">
+            <h2>Features of Java</h2>
+            <article>
+                <p>
+                    Java comes with a set of features that make it a powerful and versatile programming language.
+                </p>
+            </article>
+        </section>
+        <section id="java-cpp-vs-java">
+            <h2>C++ vs Java</h2>
+            <article>
+                <p>
+                    Comparing C++ and Java, two popular programming languages, in terms of their features and differences.
+                </p>
+            </article>
+        </section>
+        <section id="java-hello-program">
+            <h2>Hello Java Program</h2>
+            <article>
+                <p>
+                    A simple "Hello, Java!" program to get started with Java programming.
+                </p>
+                <pre>
+// Example Java Hello World program
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}
+                </pre>
+            </article>
+        </section>
+        <section id="java-internal">
+            <h2>Java Program Internal</h2>
+            <article>
+                <p>
+                    Understanding the internal structure of a Java program, including classes and methods.
+                </p>
+            </article>
+        </section>
+        <section id="java-set-path">
+            <h2>How to Set Path in Java?</h2>
+            <article>
+                <p>
+                    Learn how to set the PATH environment variable for Java to run Java applications.
+                </p>
+            </article>
+        </section>
+        <section id="java-jdk-jre-jvm">
+            <h2>Java: JDK, JRE and JVM</h2>
+            <article>
+                <p>
+                    Explaining the concepts of Java Development Kit (JDK), Java Runtime Environment (JRE), and Java Virtual Machine (JVM).
+                </p>
+            </article>
+        </section>
+        <section id="java-jvm">
+            <h2>JVM: Java Virtual Machine</h2>
+            <article>
+                <p>
+                    Understanding the role of the Java Virtual Machine (JVM) in running Java programs.
+                </p>
+            </article>
+        </section>
+        <section id="java-variables">
+            <h2>Java Variables</h2>
+            <article>
+                <p>
+                    In Java, you can declare variables to store and manipulate data.
+                </p>
+                <pre>
+// Example Java variables
+int age = 25;
+double salary = 45000.50;
+char grade = 'A';
+                </pre>
+            </article>
+        </section>
+        <section id="java-data-types">
+            <h2>Java Data Types</h2>
+            <article>
+                <p>
+                    Java supports various data types, including integers, floating-point numbers, characters, and more.
+                </p>
+                <pre>
+// Example Java data types
+int age = 25;
+double salary = 45000.50;
+char grade = 'A';
+                </pre>
+            </article>
+        </section>
+        <section id="java-operators">
+            <h2>Java Operators</h2>
+            <article>
+                <p>
+                    Java provides a wide range of operators for performing operations on variables and values.
+                </p>
+                <pre>
+// Example Java operators
+int x = 10;
+int y = 5;
+int sum = x + y;
+int difference = x - y;
+int product = x * y;
+double quotient = (double)x / y;
+                </pre>
+            </article>
+        </section>
+        <section id="java-keywords">
+            <h2>Java Keywords</h2>
+            <article>
+                <p>
+                    Java has reserved keywords that have special meanings and cannot be used as variable names.
+                </p>
+                <pre>
+// Example Java keywords
+public class Main {
+    public static void main(String[] args) {
+        int if = 5; // Error: "if" is a keyword and cannot be used as an identifier
+        System.out.println(if);
+    }
+}
+                </pre>
+            </article>
+        </section>
+        <section id="java-flow-control">
+            <h2>Java Flow of Control</h2>
+            <article>
+                <p>
+                    Java provides control flow statements like if-else, switch, loops, and more to control the flow of a program.
+                </p>
+            </article>
+        </section>
+        <section id="java-if-else">
+            <h2>Java If-else</h2>
+            <article>
+                <p>
+                    Using if-else statements in Java to make decisions in your program.
+                </p>
+                <pre>
+// Example Java if-else statement
+int age = 18;
+if (age >= 18) {
+    System.out.println("You are an adult.");
+} else {
+    System.out.println("You are a minor.");
+}
+                </pre>
+            </article>
+        </section>
+        <section id="java-switch">
+            <h2>Java Switch</h2>
+            <article>
+                <p>
+                    Implementing switch statements in Java to select one of many code blocks to be executed.
+                </p>
+                <pre>
+// Example Java switch statement
+int day = 3;
+String dayName;
+switch (day) {
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    // Add cases for other days
+    default:
+        dayName = "Invalid day";
+}
+                </pre>
+            </article>
+        </section>
+        <section id="java-for-loop">
+            <h2>Java For Loop</h2>
+            <article>
+                <p>
+                    Using for loops in Java for iterating over a range of values.
+                </p>
+                <pre>
+// Example Java for loop
+for (int i = 1; i <= 5; i++) {
+    System.out.println("Iteration " + i);
+}
+                </pre>
+            </article>
+        </section>
+        <section id="java-while-loop">
+            <h2>Java While Loop</h2>
+            <article>
+                <p>
+                    Implementing while loops in Java for repetitive tasks.
+                </p>
+                <pre>
+// Example Java while loop
+int count = 0;
+while (count < 3) {
+    System.out.println("Count: " + count);
+    count++;
+}
+                </pre>
+            </article>
+        </section>
+        <section id="java-do-while-loop">
+            <h2>Java Do While Loop</h2>
+            <article>
+                <p>
+                    Using do-while loops in Java to execute a block of code at least once, even if the condition is false.
+                </p>
+                <pre>
+// Example Java do-while loop
+int num = 0;
+do {
+    System.out.println("Number: " + num);
+    num++;
+} while (num < 3);
+                </pre>
+            </article>
+        </section>
+        <section id="java-break">
+            <h2>Java Break</h2>
+            <article>
+                <p>
+                    Using the break statement in Java to exit a loop or switch statement prematurely.
+                </p>
+                <pre>
+// Example Java break statement
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        break; // Exit the loop when i equals 3
+    }
+    System.out.println("Iteration " + i);
+}
+                </pre>
+            </article>
+        </section>
+        <section id="java-continue">
+            <h2>Java Continue</h2>
+            <article>
+                <p>
+                    Using the continue statement in Java to skip the current iteration of a loop and continue with the next.
+                </p>
+                <pre>
+// Example Java continue statement
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        continue; // Skip iteration when i equals 3
+    }
+    System.out.println("Iteration " + i);
+}
+                </pre>
+            </article>
+        </section>
+        <section id="java-comments">
+            <h2>Java Comments</h2>
+            <article>
+                <p>
+                    Adding comments to your Java code for documentation and explanation purposes.
+                </p>
+                <pre>
+// Example Java comments
+// This is a single-line comment
+/*
+    This is a multi-line comment
+    that spans multiple lines.
+*/
+                </pre>
+            </article>
+        </section>
+        <!-- Add more sections as needed -->
+    </main>
+</body>
+</html>

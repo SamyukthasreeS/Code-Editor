@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adepts IDE</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="codemirror-5.65.9/lib/codemirror.css">
+    <script src="codemirror-5.65.9/lib/codemirror.js"></script>
+    <script src="codemirror-5.65.9/mode/clike/clike.js"></script>
+    <link rel="stylesheet" href="codemirror-5.65.9/theme/dracula.css">
+    <script src="codemirror-5.65.9/addon/edit/closebrackets.js"></script>
+    <link rel="stylesheet" href="codemirror-5.65.9/theme/material.css">
+    <link rel="stylesheet" href="codemirror-5.65.9/theme/ambiance.css">
+    <link rel="stylesheet" href="index.css">  
+</head>
+<body>
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/64f2c381b2d3e13950ed77ad/1h9a4ndqs';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+    <div class="headcontainer">
+        <img src="logo_a2.png" alt="Logo" class="logo">
+        <div class="user-info" style="float: right;">
+            <p id="user-email" class="user-email"></p>
+            <div id="user-profile" class="user-profile"></div>
+            <button id="signout-btn" class="btn btn-secondary">Sign Out</button>
+        </div>
+        <button id="dashbtn" class="btn btn-secondary" style="float: right;"><a href="dashboard.html" style="text-decoration:none;color: black;">Dashboard</a></button>
+        <button id="webbutton" class="btn btn-primary" style="float: right;">
+            <a href="web/index.html" style="color: black;text-decoration: none;">web</a>
+        </button>
+        <button id="solve" class="btn btn-primary" style="float: right;"><a href="pratice.html" style="text-decoration: none;color: black;">solve</a></button>
+        <select class="form-select" style="float: right;">
+            <option selected>Learn</option>
+            <option>C</option>
+            <option>C#</option>
+            <option>Cpp</option>
+            <option>Java</option>
+            <option>Python</option>
+            <option>Ruby</option>
+        </select>
+    </div>
+    <div class="side1">
+        <div class="side">
+            <div class="flex1">
+                <div class="button-container">
+                    <button id="run" class="btn btn-success" onclick="compileP()">Run</button>
+                    <button id="downloadBtn" class="btn btn-primary">Download</button>
+                    
+                    <button id="uploadBtn" class="btn btn-primary">Upload</button>
+                    <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                    <button id="saveBtn" class="btn btn-secondary">Save</button>
+                    
+                    
+                    <button id="viewSavedFilesBtn" class="btn btn-primary"><a href="saved_files_page.php" style="text-decoration: none;color: black;">saved files</a></button>
+                    <label for="inlineFormSelectPref"></label>
+                    <select class="form-select" id="lang" onchange="template()">
+                        <option selected>Language</option>
+                        <option value="C">C</option>
+                        <option value="CSharp">C#</option>
+                        <option value="Cpp">Cpp</option>
+                        <option value="Java">Java</option>
+                        <option value="Python">Python</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="Go">Go</option>
+                    </select>
+                    <div id="themeMenu" style="margin-right: 10px;">
+                        <label for="themeSelect"></label>
+                        <select class="theme" id="themeSelect">
+                            <option value="default">Theme</option>
+                            <option value="dracula">Dracula</option>
+                            <option value="material">Material</option>
+                            <option value="ambiance">Ambiance</option>
+                        </select>
+                        
+                    </div> 
+                </div>
+                <div class="flex">
+                    <div>
+                        <textarea type="text" id="editor"></textarea>
+                    </div>
+                    <div class="testc">
+                        <h2 style="color: rgb(255, 255, 255);margin-left: 10px;margin-top:0px">Input:</h2>
+                        <textarea type="text" id="input" class="" aria-label="Last name" rows="19" cols="40" style="resize: none;"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="output-container">
+                <div class="output-textarea">
+                    <label for="Output" style="color: white;">Output</label>
+                    <textarea id="output" rows="13" cols="127"readonly></textarea>
+                </div>
+                <div class="expected-output-textarea">
+                    <label style="color: white;">Expected output:</label>
+                    <textarea id="testCase1" rows="12" cols="40" readonly></textarea>
+                    <label style="color: white;">
+                        <input type="checkbox" id="enableTestCase" style="margin-left: 21px;color: white;">Enable Test Case
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const selectBox = document.querySelector('.form-select');
+
+    selectBox.addEventListener('change', function() {
+        const selectedOption = selectBox.value; // Get the selected option's value
+
+        // Perform navigation based on the selected option
+        switch (selectedOption) {
+            case 'C':
+                window.location.href = 'documentation/c.html';
+                break;
+            case 'C#':
+                window.location.href = 'documentation/csharp.html';
+                break;
+            case 'Cpp':
+                window.location.href = 'documentation/cpp.html';
+                break;
+            case 'Java':
+                window.location.href = 'documentation/java.html';
+                break;
+            case 'Python':
+                window.location.href = 'documentation/python.html';
+                break;
+            case 'Ruby':
+                window.location.href = 'documentation/ruby.html';
+                break;
+            case 'HTML':
+                window.location.href = 'documentation/html.html';
+                break;
+            default:
+                // Handle cases for other options or no selection
+                break;
+        }
+    });
+});
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            const enableTestCaseCheckbox = document.getElementById('enableTestCase');
+            const testCase1Textarea = document.getElementById('testCase1');
+
+            enableTestCaseCheckbox.addEventListener('change', function () {
+                testCase1Textarea.readOnly = !enableTestCaseCheckbox.checked;
+            });
+
+            $("#run").click(function() {
+                if (enableTestCaseCheckbox.checked) {
+                    setTimeout(function() {
+                        var outputValue = $("#output").val().trim();
+                        var testCaseValue1 = $("#testCase1").val().trim();
+
+                        if (outputValue === testCaseValue1) {
+                            $("#testCase1").css("background-color", "lightgreen");
+                        } else {
+                            $("#testCase1").css("background-color", "lightcoral");
+                        }
+                    }, 5000);
+                }
+            });
+        });
+    </script>
+    <script>
+        // This script fetches the user's email and profile picture from the session and displays them on the page
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("get_user_data.php")  // Adjust the URL to the PHP file that fetches user data
+                .then(response => response.json())
+                .then(data => {
+                    const userEmailElement = document.getElementById("user-email");
+                    const userProfileElement = document.getElementById("user-profile");
+                    
+                    if (data.email) {
+                        userEmailElement.textContent =data.email;
+                    }
+                    if (data.profilePicture) {
+                        userProfileElement.innerHTML = `<img src="${data.profilePicture}" alt="Profile Picture" onerror="this.src='logo.png'">`;
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching user data:", error);
+                });
+                const userProfile = document.getElementById("user-profile");
+        const signoutBtn = document.getElementById("signout-btn");
+    
+        userProfile.addEventListener("click", function() {
+            signoutBtn.style.display = "block";
+        });
+        signoutBtn.addEventListener("click", function() {
+            window.location.href = "index.html"; // Redirect to index.html on signout
+        });
+        });
+    </script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function (){
+            const urlParams = new URLSearchParams(window.location.search);
+            const content = urlParams.get('content');
+            console.log("Content:", content); // Debug statement
+            if (content) {
+                const editor = document.getElementById('editor');
+                editor.value = decodeURIComponent(content);
+            }
+        });
+    </script>
+    <script src="index.js"></script>
+    <script src="save.js"></script>
+    <script src="Api.js"></script>
+    <script>
+        <!-- Inside the script tag on your current page -->
+document.addEventListener("DOMContentLoaded", function() {
+    // Fetch user data and store it in localStorage
+    fetch("get_user_data.php")  // Adjust the URL to the PHP file that fetches user data
+        .then(response => response.json())
+        .then(data => {
+            if (data.email) {
+                localStorage.setItem("userEmail", data.email);
+            }
+            if (data.profilePicture) {
+                localStorage.setItem("userProfilePicture", data.profilePicture);
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching user data:", error);
+        });
+});
+
+    </script>
+    <script>
+
+$("#saveBtn").click(function() {
+    var editorContent = editor.getValue(); // Get the content of the CodeMirror editor
+    var selectedLanguage = $("#lang").val(); // Get the selected language
+
+    if (editorContent.trim() === "") {
+        alert("Editor content is empty. Please enter some code.");
+        return;
+    }
+    var fileName = prompt("Enter a file name:"); // Prompt the user for a file name
+
+    if (fileName !== null) { // Check if the user didn't cancel the prompt
+        // Pass the language to the save.php script
+        $.ajax({
+            url: 'save.php', // Replace with the actual URL of your PHP script
+            type: 'POST',
+            data: {
+                editor_content: editorContent,
+                file_name: fileName,
+                language: selectedLanguage // Pass the selected language
+            },
+            success: function(response) {
+                if (response.success) {
+                    alert(response.message);
+                    // After saving, you can run the program with the selected language
+                    runProgram(selectedLanguage);
+                } else {
+                    alert("Error: " + response.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                alert("Error: " + error);
+            }
+        });
+    }
+});
+
+</script>
+<script src="codemirror-5.65.9/mode/ruby/ruby.js"></script>
+    <script src="codemirror-5.65.9/mode/python/python.js"></script>
+    <script src="codemirror-5.65.9/mode/go/go.js"></script>
+</body>
+</html>
